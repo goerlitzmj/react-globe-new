@@ -96,7 +96,6 @@
 
     useEffect(() => {
       globeEl.current.controls().maxPolarAngle = (Math.PI / 1.75);
-      //globeEl.current.controls().enableZoom = false;
       globeEl.current.controls().minDistance = 200;
       globeEl.current.controls().maxDistance = 500;
 
@@ -105,8 +104,6 @@
     let newGData = [];
 
     function reverseGeocode(inputLat, inputLng, apiKey) {
-
-      //my api key = 7ad20ad98d1d4d65a16c154ffd6da153
 
       const url = 'https://api.geoapify.com/v1/geocode/reverse?lat=' +
         inputLat.toString() + '&lon=' + inputLng.toString() +
@@ -250,12 +247,10 @@
         backgroundColor={'#A0A0BA'}
         globeMaterial={new THREE.MeshPhysicalMaterial({color: '#294296'})}
         showAtmosphere={true}
-        //globeImageUrl="https://unpkg.com/three-globe/example/img/earth-dark.jpg"
         pointsData={cData}
         pointColor={() => 'black'}
         pointLabel={d => d.location}
         pointRadius={0.5}
-        //pointAltitude={changeAltitude()}
         pointAltitude={0.5}
         arcsData={wData}
         arcColor={() => 'red'}
@@ -278,8 +273,6 @@
     <World />,
     document.getElementById('globeViz')
   );
-
-  //document.getElementById("element").style.display = "none";
 </script>
 </body>
 
